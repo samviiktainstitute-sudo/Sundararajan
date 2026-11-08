@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samviikta Institute · AI skills in Tamil</title>
+<meta name="description" content="Samviikta: five 4-week AI courses for rural Tamil Nadu, taught in Tamil on your phone. Run by SRK Educational and Charitable Trust.">
+<meta name="theme-color" content="#1f7a4d">
+<meta property="og:title" content="Samviikta Institute">
+<meta property="og:description" content="Learn AI skills on your phone, in Tamil. 4-week courses from ₹199/-.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20140%22%20width%3D%22120%22%20height%3D%22140%22%3E%20%3Ctitle%3ESamviikta%3C/title%3E%20%3Cpath%20d%3D%22M33%2046C29%2034%2024%2024%2025%2012C34%2017%2041%2024%2046%2032C49%2021%2053%2012%2060%205C67%2012%2071%2021%2074%2032C79%2024%2086%2017%2095%2012C96%2024%2091%2034%2087%2046Z%22%20fill%3D%22%23d9a521%22/%3E%20%3Cpath%20d%3D%22M33%2046H87%22%20stroke%3D%22%23b8860b%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22/%3E%20%3Ccircle%20cx%3D%2260%22%20cy%3D%2238%22%20r%3D%224%22%20fill%3D%22%23ffffff%22/%3E%20%3Cpath%20d%3D%22M82%2066C80%2052%2042%2051%2041%2068C40%2084%2082%2086%2082%20104C82%20125%2041%20124%2039%20110%22%20stroke%3D%22%231f7a4d%22%20stroke-width%3D%2216%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hind+Madurai:wght@400;500;600;700&display=swap">
+<style>
+/* Base reset */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+[hidden]{display:none!important}
+img,svg{max-width:100%}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Layout: paddy-field bands — deep forest header/hero with kolam dot grid, light leaf-tinted body, course cards in a responsive grid, enrollment as a focused panel. Bilingual: Tamil default, English toggle. */
+:root{
+  --forest:#eaf6ee;        /* light mint band (hero, detail heads, footer) */
+  --forest-2:#ffffff;      /* cards sitting on the mint band */
+  --leaf:#1f7a4d;
+  --sprout:#bfe5c9;
+  --paddy:#f3f8ef;
+  --bg:#fbfdf9;
+  --surface:#ffffff;
+  --fg:#1b2b22;
+  --muted:#4d6356;
+  --line:#dcebdf;
+  --accent:#1f7a4d;
+  --accent-fg:#ffffff;
+  --turmeric:#d9a521;
+  --on-dark:#1b2b22;       /* text on the mint band */
+  --on-dark-muted:#4d6356;
+  --danger:#b3412f;
+  --font-display:"Bricolage Grotesque", "Hind Madurai", "Segoe UI", system-ui, sans-serif;
+  --font-body:"Hind Madurai", "Noto Sans Tamil", "Segoe UI", system-ui, sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --forest:#0a2a20;--forest-2:#0f3a2c;--leaf:#4fb47a;--sprout:#8fd6a0;--paddy:#16271e;
+  --bg:#0e1712;--surface:#14201a;--fg:#e4efe6;--muted:#9db5a5;--line:#24382d;
+  --accent:#5cc488;--accent-fg:#06200f;--turmeric:#f0bb45;--on-dark:#eaf5e9;--on-dark-muted:#a9c9b2;--danger:#e8775f;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --forest:#0a2a20;--forest-2:#0f3a2c;--leaf:#4fb47a;--sprout:#8fd6a0;--paddy:#16271e;
+  --bg:#0e1712;--surface:#14201a;--fg:#e4efe6;--muted:#9db5a5;--line:#24382d;
+  --accent:#5cc488;--accent-fg:#06200f;--turmeric:#f0bb45;--on-dark:#eaf5e9;--on-dark-muted:#a9c9b2;--danger:#e8775f;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.2;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--turmeric);outline-offset:2px}
+.eyebrow{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted);margin:0}
+html[lang=ta] .eyebrow{letter-spacing:.02em;font-size:.9rem}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);color:var(--fg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:12px 16px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--on-dark);text-decoration:none;margin-right:auto}
+.word{font-family:"Bricolage Grotesque",sans-serif;display:flex;align-items:baseline;line-height:1}
+.word .s{font-weight:800;font-size:1.9rem;color:var(--leaf)}
+.word .rest{font-weight:600;font-size:1.1rem;letter-spacing:.12em}
+.brand small{display:block;font-size:.68rem;color:var(--on-dark-muted);letter-spacing:.03em;line-height:1.2;margin-top:3px}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav.main a{color:var(--on-dark);text-decoration:none;padding:6px 12px;border-radius:999px;font-size:.95rem}
+nav.main a:hover{background:var(--paddy)}
+nav.main a.cta{background:var(--accent);color:var(--accent-fg);font-weight:600}
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;padding:2px;background:var(--paddy)}
+.lang button{border:0;background:transparent;color:var(--fg);font:600 .9rem var(--font-body);padding:5px 12px;border-radius:999px;cursor:pointer;min-height:34px}
+.lang button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg)}
+
+/* hero */
+.hero{background:var(--forest);color:var(--on-dark);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(217,165,33,.35) 1.6px,transparent 2px);
+  background-size:26px 26px;mask-image:linear-gradient(100deg,transparent 35%,#000 85%);-webkit-mask-image:linear-gradient(100deg,transparent 35%,#000 85%)}
+.hero .wrap{position:relative;z-index:1;padding-block:56px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.01em}
+html[lang=ta] .hero h1{font-size:clamp(1.8rem,4.2vw,2.9rem);line-height:1.3;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--leaf)}
+.hero .alt{font-size:1.15rem;color:var(--on-dark-muted);margin:14px 0 20px}
+.hero p.lead{max-width:56ch;color:var(--on-dark);opacity:.92;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 1rem var(--font-body);padding:12px 22px;border-radius:999px;text-decoration:none;min-height:44px}
+.btn.primary{background:var(--accent);color:var(--accent-fg)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--on-dark);box-shadow:inset 0 0 0 1.5px var(--on-dark-muted)}
+.btn.solid{background:var(--accent);color:var(--accent-fg)}
+.btn.line{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.btn[disabled]{opacity:.6;cursor:default}
+.facts{list-style:none;margin:0;padding:22px;border-radius:var(--r);background:var(--forest-2);display:grid;gap:14px;border:1px solid rgba(124,198,141,.25)}
+.facts li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline}
+.facts .n{font-family:"Bricolage Grotesque",sans-serif;font-size:1.9rem;font-weight:800;color:var(--leaf);min-width:2.4ch;font-variant-numeric:tabular-nums}
+.facts .t{color:var(--on-dark)}
+.facts .t small{display:block;color:var(--on-dark-muted);font-size:.85rem}
+
+section{padding-block:64px}
+.sec-head{display:grid;gap:8px;margin-bottom:28px;max-width:720px}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.4rem)}
+.sec-head p{margin:0;color:var(--muted)}
+
+/* courses */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.course{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.course .code{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.08em;color:var(--leaf);background:var(--paddy);padding:3px 10px;border-radius:999px;align-self:flex-start}
+.course h3{font-size:1.3rem}
+.course .tname{color:var(--muted);font-size:.95rem;margin-top:-6px}
+.course p{margin:0}
+.course .proj{font-size:.93rem;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
+.course .proj b{color:var(--fg);font-weight:600}
+.course .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.course .btn{padding:9px 16px;font-size:.95rem}
+.found{background:var(--paddy);border-color:transparent}
+.badge{font-size:.75rem;font-weight:600;color:#0b2a1d;background:var(--turmeric);padding:2px 9px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+
+/* curriculum detail */
+.detail{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.detail-head{background:var(--forest);color:var(--on-dark);padding:22px 24px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.detail-head h3{font-size:1.45rem;flex:1 1 280px}
+.detail-head .meta{color:var(--on-dark-muted);font-size:.92rem;font-family:var(--font-body);font-weight:400;margin-top:6px}
+.close{background:transparent;border:1.5px solid var(--on-dark-muted);color:var(--on-dark);border-radius:999px;padding:6px 14px;cursor:pointer;font:500 .9rem var(--font-body);min-height:40px}
+.weeks{display:grid;grid-template-columns:repeat(4,1fr)}
+.week{padding:20px 22px;border-right:1px solid var(--line);min-width:0}
+.week:last-child{border-right:0}
+.week .wk{font-family:var(--font-display);font-weight:700;color:var(--leaf);font-size:.88rem;letter-spacing:.06em;text-transform:uppercase}
+.week h4{font-family:var(--font-display);font-size:1.08rem;margin:4px 0 8px;line-height:1.3}
+.week ul{margin:0;padding-left:18px;font-size:.93rem}
+.week li{margin-bottom:4px}
+.week .hw{margin-top:10px;font-size:.88rem;background:var(--paddy);border-radius:10px;padding:8px 10px}
+.detail-foot{padding:16px 24px;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:.93rem;color:var(--muted)}
+
+/* how it works */
+.alt-band{background:var(--paddy)}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border-radius:var(--r);padding:20px;min-width:0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;margin-bottom:10px}
+.steps h3{font-size:1.08rem;margin-bottom:4px}
+.steps p{margin:0;color:var(--muted);font-size:.95rem}
+.needs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.needs span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.93rem}
+
+/* enroll */
+.enroll{display:grid;grid-template-columns:1fr 1.4fr;gap:36px;align-items:start}
+.enroll h2{font-size:clamp(1.6rem,3.4vw,2.4rem);margin:8px 0 12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;min-width:0}
+form{display:grid;gap:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+label small{font-weight:400;color:var(--muted)}
+input[type=text],input[type=tel],input[type=number],select{font:inherit;font-weight:400;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);width:100%;min-height:44px}
+input:focus,select:focus{border-color:var(--accent);outline:none}
+fieldset{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:0;min-width:0}
+legend{font-weight:600;font-size:.95rem;padding:0 6px}
+.checks{display:grid;gap:10px}
+.checks label{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.checks input{margin-top:5px;accent-color:var(--accent);width:18px;height:18px;flex:none}
+.radios{display:flex;flex-wrap:wrap;gap:8px 16px}
+.radios label{display:flex;gap:6px;align-items:center;font-weight:400}
+.radios input{accent-color:var(--accent);width:18px;height:18px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.consent input{margin-top:5px;accent-color:var(--accent);width:18px;height:18px;flex:none}
+.err{color:var(--danger);font-size:.92rem;margin:0}
+.ok{background:var(--paddy);border-radius:12px;padding:16px;display:grid;gap:8px}
+.ok h3{font-size:1.2rem;color:var(--leaf)}
+.ok p{margin:0}
+.note{font-size:.88rem;color:var(--muted);margin:0}
+.side-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.side-list li{display:grid;grid-template-columns:22px 1fr;gap:8px}
+.side-list li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--sprout);margin-top:9px;justify-self:center}
+pre.copy{white-space:pre-wrap;background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:12px;font:inherit;font-size:.88rem;margin:0}
+
+/* admin */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat .v{font-family:"Bricolage Grotesque",sans-serif;font-size:1.8rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--leaf)}
+.stat .l{font-size:.85rem;color:var(--muted)}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:760px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.04em;color:var(--muted);background:var(--paddy)}
+.pill{display:inline-block;background:var(--paddy);color:var(--leaf);border-radius:999px;padding:1px 8px;font-size:.78rem;font-weight:600;margin:1px 2px 1px 0}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.toolbar label{display:flex;gap:8px;align-items:center}
+.toolbar select{width:auto}
+
+/* fees & payment */
+.fee{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;color:var(--leaf);font-variant-numeric:tabular-nums}
+.course .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.course .fee small{font-family:var(--font-body);font-weight:500;font-size:.78rem;color:var(--muted);margin-left:4px}
+.feeline{display:flex;justify-content:space-between;gap:12px;font-weight:600;border-top:1px dashed var(--line);margin-top:4px;padding-top:10px}
+.checks .cfee{margin-left:auto;font-weight:600;color:var(--leaf);white-space:nowrap;font-variant-numeric:tabular-nums}
+.checks label span.cname{flex:1;min-width:0}
+.pay{display:grid;gap:14px;margin-top:6px}
+.pay h3{font-size:1.25rem}
+.bill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:6px;font-variant-numeric:tabular-nums}
+.bill div{display:flex;justify-content:space-between;gap:12px}
+.bill .tot{border-top:1px solid var(--line);padding-top:8px;font-weight:700}
+.opt{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:10px}
+.opt h4{margin:0;font-family:var(--font-display);font-size:1.05rem}
+.opt p{margin:0;font-size:.93rem;color:var(--muted)}
+.kv{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.95rem}
+.kv code{font:600 .95rem var(--font-body);background:var(--paddy);padding:3px 10px;border-radius:8px;user-select:all}
+.kv button{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:8px;padding:4px 10px;font:500 .85rem var(--font-body);cursor:pointer;min-height:32px}
+.status{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:600}
+.status.unpaid{background:#fbe9e5;color:#8a2f1f}
+.status.pending{background:#fdf3d7;color:#7a5600}
+.status.paid{background:var(--paddy);color:var(--leaf)}
+.mini{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;padding:3px 10px;font:600 .8rem var(--font-body);cursor:pointer;margin-top:4px}
+.settings{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:22px;display:grid;gap:14px}
+.settings h3{font-size:1.15rem}
+.settings p{margin:0;color:var(--muted);font-size:.93rem}
+
+footer{background:var(--forest);color:var(--on-dark-muted);font-size:.92rem}
+footer .wrap{padding-block:32px;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
+footer b{color:var(--on-dark)}
+
+@media (max-width:900px){
+  .hero .wrap,.enroll{grid-template-columns:1fr}
+  .weeks{grid-template-columns:1fr 1fr}
+  .week:nth-child(2){border-right:0}
+  .week:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .weeks,.steps,.two{grid-template-columns:1fr}
+  .week{border-right:0;border-bottom:1px solid var(--line)}
+  nav.main a:not(.cta){display:none}
+  .hero .wrap{padding-block:40px}
+  .brand small{display:none}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.course{transition:transform .15s ease,background .15s ease}.course:hover{transform:translateY(-2px)}}
+
+/* admin page */
+.gate{max-width:520px;margin:64px auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:14px;text-align:center}
+.gate h1{font-size:1.6rem}
+.gate p{margin:0;color:var(--muted)}
+.who{font-size:.88rem;color:var(--muted)}
+footer a{color:var(--on-dark)}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Samviikta">
+      <svg width="40" height="47" viewBox="0 0 120 140" aria-hidden="true"><path d="M33 46C29 34 24 24 25 12C34 17 41 24 46 32C49 21 53 12 60 5C67 12 71 21 74 32C79 24 86 17 95 12C96 24 91 34 87 46Z" fill="#d9a521"/>
+  <path d="M33 46H87" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="60" cy="38" r="4" fill="#ffffff"/>
+  <path d="M82 66C80 52 42 51 41 68C40 84 82 86 82 104C82 125 41 124 39 110" stroke="#1f7a4d" stroke-width="16" stroke-linecap="round" fill="none"/></svg>
+      <span><span class="word"><span class="s">S</span><span class="rest">AMVIIKTA</span></span><small>SRK Educational &amp; Charitable Trust</small></span>
+    </a>
+    <nav class="main" id="siteNav" aria-label="Main">
+      <a href="#courses" data-i18n="nav.courses"></a>
+      <a href="#how" data-i18n="nav.how"></a>
+      <a href="#enroll" class="cta" data-i18n="nav.enroll"></a>
+    </nav>
+    <nav class="main" id="adminNav" aria-label="Admin" hidden>
+      <a href="#" data-i18n="adm.back"></a>
+      <span class="who" id="who"></span>
+      <button class="btn line" type="button" id="signOut" style="padding:6px 14px;min-height:38px" data-i18n="adm.signout" hidden></button>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / மொழி">
+      <button type="button" data-lang="ta" lang="ta">தமிழ்</button>
+      <button type="button" data-lang="en" lang="en">English</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+      <h1 data-i18n-html="hero.h1" style="margin-top:10px"></h1>
+      <p class="alt" data-i18n="hero.alt"></p>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <div class="btns">
+        <a class="btn primary" href="#enroll" data-i18n="hero.cta1"></a>
+        <a class="btn ghost" href="#courses" data-i18n="hero.cta2"></a>
+      </div>
+    </div>
+    <ul class="facts">
+      <li><span class="n">5</span><span class="t"><span data-i18n="f1"></span><small data-i18n="f1s"></small></span></li>
+      <li><span class="n">4</span><span class="t"><span data-i18n="f2"></span><small data-i18n="f2s"></small></span></li>
+      <li><span class="n">90</span><span class="t"><span data-i18n="f3"></span><small data-i18n="f3s"></small></span></li>
+      <li><span class="n">1</span><span class="t"><span data-i18n="f4"></span><small data-i18n="f4s"></small></span></li>
+    </ul>
+  </div>
+</div>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="c.eyebrow"></p>
+      <h2 data-i18n="c.h2"></h2>
+      <p data-i18n="c.p"></p>
+      <p style="color:var(--fg);font-weight:600" data-i18n="c.fees"></p>
+    </div>
+    <div class="grid" id="courseGrid"></div>
+    <div id="detail" class="detail" hidden></div>
+  </div>
+</section>
+
+<section id="how" class="alt-band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="h.eyebrow"></p>
+      <h2 data-i18n="h.h2"></h2>
+    </div>
+    <ol class="steps">
+      <li><h3 data-i18n="s1"></h3><p data-i18n="s1p"></p></li>
+      <li><h3 data-i18n="s2"></h3><p data-i18n="s2p"></p></li>
+      <li><h3 data-i18n="s3"></h3><p data-i18n="s3p"></p></li>
+      <li><h3 data-i18n="s4"></h3><p data-i18n="s4p"></p></li>
+    </ol>
+    <div class="needs">
+      <span data-i18n="n1"></span><span data-i18n="n2"></span><span data-i18n="n3"></span><span data-i18n="n4"></span><span data-i18n="n5"></span>
+    </div>
+  </div>
+</section>
+
+<section id="enroll">
+  <div class="wrap enroll">
+    <div>
+      <p class="eyebrow" data-i18n="e.eyebrow"></p>
+      <h2 data-i18n="e.h2"></h2>
+      <p style="margin:0;color:var(--muted)" data-i18n="e.p"></p>
+      <ul class="side-list">
+        <li data-i18n="e.l1"></li>
+        <li data-i18n="e.l2"></li>
+        <li data-i18n="e.l3"></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <form id="enrollForm" novalidate>
+        <div class="two">
+          <label for="fName"><span data-i18n="fl.name"></span><input id="fName" type="text" autocomplete="name" maxlength="90"></label>
+          <label for="fPhone"><span data-i18n="fl.phone"></span><input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel" data-i18n-ph="fl.phonePh"></label>
+        </div>
+        <div class="two">
+          <label for="fAge"><span data-i18n="fl.age"></span><input id="fAge" type="number" min="14" max="80" inputmode="numeric"></label>
+          <label for="fDistrict"><span data-i18n="fl.district"></span><select id="fDistrict"></select></label>
+        </div>
+        <label for="fVillage"><span><span data-i18n="fl.village"></span> <small data-i18n="fl.optional"></small></span><input id="fVillage" type="text" maxlength="90"></label>
+        <fieldset>
+          <legend data-i18n="fl.courses"></legend>
+          <div class="checks" id="fCourses"></div>
+          <div class="feeline"><span data-i18n="total"></span><span class="fee" id="feeTotal" aria-live="polite"></span></div>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="fl.time"></legend>
+          <div class="radios">
+            <label><input type="radio" name="fTime" value="Weekday morning"> <span data-i18n="t.morning"></span></label>
+            <label><input type="radio" name="fTime" value="Weekday evening" checked> <span data-i18n="t.evening"></span></label>
+            <label><input type="radio" name="fTime" value="Weekend"> <span data-i18n="t.weekend"></span></label>
+          </div>
+        </fieldset>
+        <div class="two">
+          <label for="fEnglish"><span data-i18n="fl.english"></span><select id="fEnglish">
+            <option value="Can't read English yet" data-i18n="en.0"></option>
+            <option value="Can read a little" data-i18n="en.1" selected></option>
+            <option value="Can read and write" data-i18n="en.2"></option>
+            <option value="Can speak a little" data-i18n="en.3"></option>
+          </select></label>
+          <label for="fDevice"><span data-i18n="fl.device"></span><select id="fDevice">
+            <option value="Android phone only" data-i18n="d.0" selected></option>
+            <option value="Phone and laptop" data-i18n="d.1"></option>
+            <option value="iPhone" data-i18n="d.2"></option>
+          </select></label>
+        </div>
+        <label class="consent" for="fConsent"><input type="checkbox" id="fConsent"> <span data-i18n="fl.consent"></span></label>
+        <p class="err" id="formErr" role="alert" hidden></p>
+        <div class="btns"><button class="btn solid" type="submit" id="submitBtn" data-i18n="fl.submit"></button></div>
+      </form>
+      <div id="enrollDone" hidden></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<main id="adminView" hidden>
+  <div class="wrap">
+    <div class="gate" id="gate">
+      <div style="justify-self:center"><svg width="72" height="84" viewBox="0 0 120 140" aria-hidden="true"><path d="M33 46C29 34 24 24 25 12C34 17 41 24 46 32C49 21 53 12 60 5C67 12 71 21 74 32C79 24 86 17 95 12C96 24 91 34 87 46Z" fill="#d9a521"/>
+  <path d="M33 46H87" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="60" cy="38" r="4" fill="#ffffff"/>
+  <path d="M82 66C80 52 42 51 41 68C40 84 82 86 82 104C82 125 41 124 39 110" stroke="#1f7a4d" stroke-width="16" stroke-linecap="round" fill="none"/></svg></div>
+      <h1 data-i18n="adm.title"></h1>
+      <p id="gateMsg" data-i18n="adm.gateP"></p>
+      <button class="btn solid" type="button" id="signIn" style="justify-self:center" data-i18n="adm.signin"></button>
+    </div>
+  </div>
+
+  <section id="admin" class="alt-band" hidden>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="a.eyebrow"></p>
+        <h2 data-i18n="a.h2"></h2>
+        <p data-i18n="a.p"></p>
+      </div>
+      <form class="settings" id="setForm" novalidate>
+        <h3 data-i18n="set.h"></h3>
+        <p data-i18n="set.p"></p>
+        <div class="two">
+          <label for="sWa"><span data-i18n="set.wa"></span><input id="sWa" type="tel" inputmode="numeric" placeholder="919876543210"></label>
+          <label for="sUpi"><span data-i18n="set.upi"></span><input id="sUpi" type="text" placeholder="name@bank"></label>
+        </div>
+        <div class="two" id="sStripe"></div>
+        <p class="err" id="setErr" role="alert" hidden></p>
+        <div class="btns" style="align-items:center"><button class="btn solid" type="submit" id="setSave" data-i18n="set.save"></button><span class="note" id="setNote" aria-live="polite"></span></div>
+      </form>
+      <div class="stats" id="stats"></div>
+      <div class="toolbar">
+        <label for="filterCourse"><span data-i18n="a.course"></span> <select id="filterCourse"></select></label>
+        <button class="btn line" type="button" id="downloadCsv" style="padding:8px 16px" data-i18n="a.download"></button>
+        <button class="btn line" type="button" id="copyCsv" style="padding:8px 16px" data-i18n="a.csv"></button>
+        <span class="note" id="copyNote" aria-live="polite"></span>
+      </div>
+      <div class="tablewrap"><table><thead><tr id="thead"></tr></thead><tbody id="rows"></tbody></table></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Samviikta Institute</b><br><span data-i18n="ft.run"></span></div>
+    <div><span data-i18n="ft.where"></span><br>© <span id="year"></span> · <a href="#admin" data-i18n="ft.team"></a></div>
+  </div>
+</footer>
+
+<noscript><p style="padding:16px;text-align:center">Please turn on JavaScript to see the courses and enroll.</p></noscript>
+
+<script type="module">
+/* =====================================================================
+   SAMVIIKTA SETTINGS — the only part you need to edit.
+   Fill in the values between the quote marks, then save (Commit changes).
+   ===================================================================== */
+
+// ─────────────────────────────────────────────────────────────
+// Samviikta site settings.
+// ─────────────────────────────────────────────────────────────
+
+// 1. Firebase web app config
+//    Firebase console → Project settings → General → Your apps → Web app → "SDK setup and configuration" → Config.
+//    These values are safe to publish: access is controlled by firestore.rules.
+//    Leave apiKey empty to run the site without a database (students then copy their details and send them on WhatsApp).
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+
+// 2. Payment details shown to students.
+//    Payment settings saved later on the admin page (your-site/#admin) override these.
+const payments = {
+  whatsapp: "",            // digits with country code, e.g. "919876543210"
+  upi: "",                 // e.g. "samviikta@okaxis"
+  stripe: {                // Stripe Payment Links, one per course (https://buy.stripe.com/...)
+    "SAM-101": "",
+    "SAM-102": "",
+    "SAM-103": "",
+    "SAM-104": "",
+    "SAM-105": ""
+  }
+};
+
+/* ===================== Do not edit below this line ===================== */
+
+const T = {
+ en:{
+  "nav.courses":"Courses","nav.how":"How it works","nav.admin":"Enrollments","nav.enroll":"Enroll now",
+  "hero.eyebrow":"Online AI training for rural Tamil Nadu",
+  "hero.h1":"Learn AI skills on <em>your phone</em>, in Tamil.",
+  "hero.alt":"கிராமத்திலிருந்து டிஜிட்டல் உலகிற்கு — உங்கள் மொபைலில், உங்கள் மொழியில்.",
+  "hero.lead":"Five practical courses. Each one runs for 4 weeks, with one live class a week taught by one trainer. No laptop needed and no English needed to start. Every course ends with something real you can show or earn from.",
+  "hero.cta1":"Enroll now","hero.cta2":"See the 5 courses",
+  "f1":"courses","f1s":"AI, video, WhatsApp, websites, spoken English",
+  "f2":"weeks per course","f2s":"one live class every week",
+  "f3":"minutes per class","f3s":"live on Google Meet, recording on WhatsApp",
+  "f4":"Android phone","f4s":"is all you need",
+  "c.eyebrow":"Courses","c.h2":"Five courses, one month each",
+  "c.p":"Start with AI on Your Phone, then pick what helps your work or business. Tap a course to see its week-by-week plan.",
+  "badge":"Start here","proj":"Final project:","btn.plan":"Week-by-week plan","btn.enroll":"Enroll",
+  "meta":"4 weeks · 1 live class a week · 90 minutes · 1 trainer · Tamil medium · Apps: ",
+  "close":"Close","week":"Week","hw":"Homework:","finish":"Finish:",
+  "dfoot":"Each class: recap, teach, do-along on your phone, practice, homework.","full":"Open full curriculum",
+  "h.eyebrow":"How it works","h.h2":"From sign-up to certificate in four weeks",
+  "s1":"Enroll online","s1p":"Fill the form below with your WhatsApp number and pick your courses.",
+  "s2":"Join the WhatsApp group","s2p":"The trainer adds you to your batch group with the class link and timings.",
+  "s3":"Attend 4 live classes","s3p":"One 90-minute class a week on Google Meet. Missed one? Watch the recording.",
+  "s4":"Show your project","s4p":"Finish your final project in Week 4 and receive the Samviikta certificate.",
+  "n1":"Android phone","n2":"About 1 GB data per class","n3":"Gmail account","n4":"Earphones with mic","n5":"Notebook and pen",
+  "e.eyebrow":"Enrollment","e.h2":"Join the next batch",
+  "e.p":"New batches start every month. You can pick more than one course; we recommend starting with SAM-101.",
+  "e.l1":"Classes are taught in Tamil.","e.l2":"We contact you on WhatsApp within a few days.","e.l3":"Your details are used only for Samviikta classes.",
+  "fl.name":"Full name","fl.phone":"WhatsApp number","fl.phonePh":"10-digit mobile","fl.age":"Age","fl.district":"District","fl.chooseDistrict":"Choose district",
+  "fl.village":"Village or town","fl.optional":"(optional)","fl.courses":"Courses you want to join","fl.time":"Best time for class",
+  "t.morning":"Weekday morning","t.evening":"Weekday evening","t.weekend":"Weekend",
+  "fl.english":"English level","en.0":"Can't read English yet","en.1":"Can read a little","en.2":"Can read and write","en.3":"Can speak a little",
+  "fl.device":"Device","d.0":"Android phone only","d.1":"Phone and laptop","d.2":"iPhone",
+  "fl.consent":"I agree that Samviikta can contact me on WhatsApp about these classes.",
+  "fl.submit":"Submit enrollment","fl.saving":"Saving…",
+  "err.name":"Enter your full name.","err.phone":"Enter a 10-digit WhatsApp number.","err.district":"Choose your district.",
+  "err.courses":"Pick at least one course.","err.consent":"Tick the box so we can contact you on WhatsApp.",
+  "err.save":"Couldn't save just now. Check your internet and press Submit again.",
+  "done.title":"You're enrolled, {name}.","done.courses":"Courses:","done.note":"The Samviikta team will message you on WhatsApp at {phone} with your batch group and class link.",
+  "done.change":"Change my enrollment","almost":"Almost done",
+  "almost.p":"Online saving isn't available right now. Copy your details and send them to Samviikta on WhatsApp.",
+  "copy":"Copy details","edit":"Edit","copied":"Copied.","selected":"Text selected — copy it from your phone's menu.",
+  "a.eyebrow":"For the Samviikta team","a.h2":"Enrollments","a.p":"Only you and editors see this list. Students see only their own enrollment.",
+  "a.course":"Course","a.all":"All courses","a.csv":"Copy as CSV","a.total":"Students enrolled",
+  "a.copied":"Copied — paste into Google Sheets or Excel.","a.nocopy":"Copy isn't allowed here. Try a desktop browser.",
+  "a.loading":"Loading enrollments…","a.empty":"No enrollments yet. They appear here as soon as students submit the form.",
+  "a.slow":"Can't reach the enrollment list yet. It will load when the connection returns.","a.fail":"The enrollment list couldn't load. Reopen the page to try again.",
+  "th":["Date","Name","WhatsApp","Age","District","Courses","Fee","Payment","Time","English","Device"],
+  "ft.run":"Run by SRK Educational and Charitable Trust · Operated by Tech Vaseegrah","ft.where":"Online classes for students across Tamil Nadu",
+  "c.fees":"Fees: ₹199/- to ₹449/- per course, for all 4 weeks.","fee":"Fee","perCourse":"full course","total":"Total",
+  "pay.h":"Pay your course fee","pay.p":"Your seat is confirmed once the fee is received. Choose one way to pay.",
+  "pay.online":"Pay online (card / UPI)","pay.onlineP":"A secure Stripe payment page opens in a new tab. Pay once for each course.",
+  "pay.payFor":"Pay {fee} for {code}","pay.onlineSoon":"Online payment is coming soon. Please pay through WhatsApp for now.",
+  "pay.wa":"Pay through WhatsApp","pay.waP":"Message us on WhatsApp, pay the total by UPI to the ID below, and send the payment screenshot in the same chat.",
+  "pay.waBtn":"Open WhatsApp chat","pay.waNum":"WhatsApp number","pay.upi":"UPI ID","pay.copy":"Copy","pay.copied":"Copied",
+  "pay.notSet":"The Samviikta team will message you with payment details on WhatsApp.",
+  "pay.doneH":"Already paid?","pay.method":"How did you pay?","pm.upi":"UPI / WhatsApp","pm.stripe":"Online (Stripe)",
+  "pay.ref":"Transaction or UPI reference number","pay.submit":"I have paid","pay.errRef":"Enter the reference number from your payment.",
+  "pay.errSave":"Couldn't send just now. Check your internet and try again.",
+  "pay.pending":"Thanks! We're checking your payment and will confirm on WhatsApp within a day.","pay.paid":"Payment confirmed. See you in class!",
+  "status.unpaid":"Not paid","status.pending":"Checking","status.paid":"Paid",
+  "wa.msg":"Hello Samviikta, I enrolled for {courses}. Name: {name}. Total fee: {total}. Please confirm my payment.",
+  "set.h":"Payment settings","set.p":"Students see these on the payment step. Create one Stripe Payment Link per course in your Stripe dashboard (fixed price) and paste it here. Leave a link empty to hide online payment for that course.",
+  "set.wa":"Samviikta WhatsApp number, with country code","set.upi":"UPI ID","set.stripe":"Stripe Payment Link · {code} ({fee})",
+  "set.save":"Save payment settings","set.saved":"Saved.","set.badLink":"Stripe links must start with https://","set.badWa":"Enter the WhatsApp number as digits with country code, e.g. 919876543210.","set.fail":"Couldn't save just now. Try again.",
+  "a.markPaid":"Mark paid","a.collected":"Fees confirmed","a.ref":"Ref"
+ },
+ ta:{
+  "nav.courses":"பாடநெறிகள்","nav.how":"எப்படி செயல்படுகிறது","nav.admin":"சேர்க்கைகள்","nav.enroll":"இப்போதே சேருங்கள்",
+  "hero.eyebrow":"கிராமப்புற தமிழ்நாட்டிற்கான ஆன்லைன் AI பயிற்சி",
+  "hero.h1":"<em>உங்கள் மொபைலில்</em> AI திறன்களைத் தமிழில் கற்றுக்கொள்ளுங்கள்.",
+  "hero.alt":"From village to the digital world — on your phone, in your language.",
+  "hero.lead":"ஐந்து பயனுள்ள பாடநெறிகள். ஒவ்வொன்றும் 4 வாரங்கள், வாரத்திற்கு ஒரு நேரடி வகுப்பு, ஒரே பயிற்சியாளர். லேப்டாப் தேவையில்லை, தொடங்க ஆங்கிலம் தெரிய வேண்டியதில்லை. ஒவ்வொரு பாடநெறியின் முடிவிலும் நீங்கள் காட்டக்கூடிய அல்லது சம்பாதிக்கக்கூடிய ஒன்றை உருவாக்குவீர்கள்.",
+  "hero.cta1":"இப்போதே சேருங்கள்","hero.cta2":"5 பாடநெறிகளைப் பாருங்கள்",
+  "f1":"பாடநெறிகள்","f1s":"AI, வீடியோ, WhatsApp, இணையதளம், ஆங்கிலம் பேசுதல்",
+  "f2":"வாரங்கள் ஒவ்வொரு பாடநெறிக்கும்","f2s":"வாரம் ஒரு நேரடி வகுப்பு",
+  "f3":"நிமிடங்கள் ஒரு வகுப்புக்கு","f3s":"Google Meet-ல் நேரலை, பதிவு WhatsApp-ல்",
+  "f4":"Android போன்","f4s":"இது மட்டும் போதும்",
+  "c.eyebrow":"பாடநெறிகள்","c.h2":"ஐந்து பாடநெறிகள், ஒவ்வொன்றும் ஒரு மாதம்",
+  "c.p":"முதலில் 'உங்கள் போனில் AI' பாடநெறியுடன் தொடங்குங்கள், பிறகு உங்கள் வேலைக்கோ தொழிலுக்கோ உதவுவதைத் தேர்ந்தெடுங்கள். வாரவாரத் திட்டத்தைப் பார்க்க பாடநெறியைத் தொடுங்கள்.",
+  "badge":"இங்கே தொடங்குங்கள்","proj":"இறுதி திட்டப்பணி:","btn.plan":"வாரவாரத் திட்டம்","btn.enroll":"சேருங்கள்",
+  "meta":"4 வாரங்கள் · வாரம் 1 நேரடி வகுப்பு · 90 நிமிடங்கள் · 1 பயிற்சியாளர் · தமிழ் வழி · செயலிகள்: ",
+  "close":"மூடு","week":"வாரம்","hw":"வீட்டுப்பாடம்:","finish":"நிறைவு:",
+  "dfoot":"ஒவ்வொரு வகுப்பும்: மறுபார்வை, கற்பித்தல், போனில் சேர்ந்து செய்தல், பயிற்சி, வீட்டுப்பாடம்.","full":"முழு பாடத்திட்டத்தைத் திறக்க",
+  "h.eyebrow":"எப்படி செயல்படுகிறது","h.h2":"பதிவு முதல் சான்றிதழ் வரை நான்கு வாரங்களில்",
+  "s1":"ஆன்லைனில் சேருங்கள்","s1p":"கீழே உள்ள படிவத்தில் உங்கள் WhatsApp எண்ணை நிரப்பி, பாடநெறிகளைத் தேர்ந்தெடுங்கள்.",
+  "s2":"WhatsApp குழுவில் இணையுங்கள்","s2p":"பயிற்சியாளர் உங்களை வகுப்பு இணைப்பு மற்றும் நேரத்துடன் உங்கள் பேட்ச் குழுவில் சேர்ப்பார்.",
+  "s3":"4 நேரடி வகுப்புகளில் பங்கேற்கவும்","s3p":"Google Meet-ல் வாரம் ஒரு 90 நிமிட வகுப்பு. தவறவிட்டால் பதிவைப் பாருங்கள்.",
+  "s4":"உங்கள் திட்டப்பணியைக் காட்டுங்கள்","s4p":"4வது வாரத்தில் இறுதி திட்டப்பணியை முடித்து சம்விக்தா சான்றிதழைப் பெறுங்கள்.",
+  "n1":"Android போன்","n2":"ஒரு வகுப்புக்கு சுமார் 1 GB டேட்டா","n3":"Gmail கணக்கு","n4":"மைக்குடன் இயர்போன்","n5":"நோட்டு மற்றும் பேனா",
+  "e.eyebrow":"சேர்க்கை","e.h2":"அடுத்த பேட்ச்சில் சேருங்கள்",
+  "e.p":"புதிய பேட்ச்கள் ஒவ்வொரு மாதமும் தொடங்கும். ஒன்றுக்கு மேற்பட்ட பாடநெறிகளைத் தேர்ந்தெடுக்கலாம்; SAM-101 உடன் தொடங்க பரிந்துரைக்கிறோம்.",
+  "e.l1":"வகுப்புகள் தமிழில் நடத்தப்படும்.","e.l2":"சில நாட்களில் WhatsApp-ல் உங்களைத் தொடர்பு கொள்வோம்.","e.l3":"உங்கள் விவரங்கள் சம்விக்தா வகுப்புகளுக்கு மட்டுமே பயன்படுத்தப்படும்.",
+  "fl.name":"முழுப் பெயர்","fl.phone":"WhatsApp எண்","fl.phonePh":"10 இலக்க மொபைல் எண்","fl.age":"வயது","fl.district":"மாவட்டம்","fl.chooseDistrict":"மாவட்டத்தைத் தேர்ந்தெடுங்கள்",
+  "fl.village":"கிராமம் அல்லது நகரம்","fl.optional":"(விருப்பம்)","fl.courses":"நீங்கள் சேர விரும்பும் பாடநெறிகள்","fl.time":"வகுப்புக்கு ஏற்ற நேரம்",
+  "t.morning":"வார நாள் காலை","t.evening":"வார நாள் மாலை","t.weekend":"வார இறுதி",
+  "fl.english":"ஆங்கில நிலை","en.0":"இன்னும் ஆங்கிலம் படிக்கத் தெரியாது","en.1":"கொஞ்சம் படிக்கத் தெரியும்","en.2":"படிக்கவும் எழுதவும் தெரியும்","en.3":"கொஞ்சம் பேசத் தெரியும்",
+  "fl.device":"சாதனம்","d.0":"Android போன் மட்டும்","d.1":"போன் மற்றும் லேப்டாப்","d.2":"iPhone",
+  "fl.consent":"இந்த வகுப்புகள் பற்றி சம்விக்தா என்னை WhatsApp-ல் தொடர்பு கொள்ள ஒப்புக்கொள்கிறேன்.",
+  "fl.submit":"சேர்க்கையைச் சமர்ப்பிக்கவும்","fl.saving":"சேமிக்கிறது…",
+  "err.name":"உங்கள் முழுப் பெயரை உள்ளிடுங்கள்.","err.phone":"10 இலக்க WhatsApp எண்ணை உள்ளிடுங்கள்.","err.district":"உங்கள் மாவட்டத்தைத் தேர்ந்தெடுங்கள்.",
+  "err.courses":"குறைந்தது ஒரு பாடநெறியைத் தேர்ந்தெடுங்கள்.","err.consent":"WhatsApp-ல் தொடர்பு கொள்ள பெட்டியில் டிக் செய்யுங்கள்.",
+  "err.save":"இப்போது சேமிக்க முடியவில்லை. இணைய இணைப்பைச் சரிபார்த்து மீண்டும் சமர்ப்பிக்கவும்.",
+  "done.title":"{name}, நீங்கள் சேர்ந்துவிட்டீர்கள்.","done.courses":"பாடநெறிகள்:","done.note":"சம்விக்தா குழு {phone} என்ற எண்ணுக்கு WhatsApp மூலம் உங்கள் பேட்ச் குழு மற்றும் வகுப்பு இணைப்பை அனுப்பும்.",
+  "done.change":"என் சேர்க்கையை மாற்று","almost":"கிட்டத்தட்ட முடிந்தது",
+  "almost.p":"இப்போது ஆன்லைனில் சேமிக்க முடியவில்லை. உங்கள் விவரங்களை நகலெடுத்து சம்விக்தாவுக்கு WhatsApp-ல் அனுப்புங்கள்.",
+  "copy":"விவரங்களை நகலெடு","edit":"திருத்து","copied":"நகலெடுக்கப்பட்டது.","selected":"உரை தேர்ந்தெடுக்கப்பட்டது — போன் மெனுவிலிருந்து நகலெடுங்கள்.",
+  "a.eyebrow":"சம்விக்தா குழுவுக்கு","a.h2":"சேர்க்கைகள்","a.p":"இந்தப் பட்டியலை நீங்களும் எடிட்டர்களும் மட்டுமே பார்க்க முடியும். மாணவர்கள் தங்கள் சேர்க்கையை மட்டுமே பார்ப்பார்கள்.",
+  "a.course":"பாடநெறி","a.all":"அனைத்து பாடநெறிகள்","a.csv":"CSV ஆக நகலெடு","a.total":"சேர்ந்த மாணவர்கள்",
+  "a.copied":"நகலெடுக்கப்பட்டது — Google Sheets அல்லது Excel-ல் ஒட்டுங்கள்.","a.nocopy":"இங்கே நகலெடுக்க அனுமதி இல்லை. கணினி உலாவியில் முயலுங்கள்.",
+  "a.loading":"சேர்க்கைகள் ஏற்றப்படுகின்றன…","a.empty":"இன்னும் சேர்க்கைகள் இல்லை. மாணவர்கள் படிவத்தைச் சமர்ப்பித்தவுடன் இங்கே தோன்றும்.",
+  "a.slow":"சேர்க்கைப் பட்டியலை இன்னும் அடைய முடியவில்லை. இணைப்பு வந்தவுடன் ஏற்றப்படும்.","a.fail":"சேர்க்கைப் பட்டியல் ஏற்றப்படவில்லை. பக்கத்தை மீண்டும் திறந்து முயலுங்கள்.",
+  "th":["தேதி","பெயர்","WhatsApp","வயது","மாவட்டம்","பாடநெறிகள்","கட்டணம்","கட்டண நிலை","நேரம்","ஆங்கிலம்","சாதனம்"],
+  "ft.run":"நடத்துவது: SRK Educational and Charitable Trust · செயல்படுத்துவது: Tech Vaseegrah","ft.where":"தமிழ்நாடு முழுவதும் உள்ள மாணவர்களுக்கான ஆன்லைன் வகுப்புகள்",
+  "c.fees":"கட்டணம்: ஒரு பாடநெறிக்கு ₹199/- முதல் ₹449/- வரை, முழு 4 வாரங்களுக்கும்.","fee":"கட்டணம்","perCourse":"முழு பாடநெறி","total":"மொத்தம்",
+  "pay.h":"பாடநெறிக் கட்டணத்தைச் செலுத்துங்கள்","pay.p":"கட்டணம் கிடைத்தவுடன் உங்கள் இடம் உறுதி செய்யப்படும். ஒரு வழியைத் தேர்ந்தெடுங்கள்.",
+  "pay.online":"ஆன்லைனில் செலுத்துங்கள் (கார்டு / UPI)","pay.onlineP":"பாதுகாப்பான Stripe கட்டணப் பக்கம் புதிய தாவலில் திறக்கும். ஒவ்வொரு பாடநெறிக்கும் ஒருமுறை செலுத்துங்கள்.",
+  "pay.payFor":"{code}-க்கு {fee} செலுத்து","pay.onlineSoon":"ஆன்லைன் கட்டணம் விரைவில் வரும். இப்போது WhatsApp மூலம் செலுத்துங்கள்.",
+  "pay.wa":"WhatsApp மூலம் செலுத்துங்கள்","pay.waP":"WhatsApp-ல் எங்களுக்குச் செய்தி அனுப்பி, மொத்தத் தொகையைக் கீழே உள்ள UPI ID-க்கு செலுத்தி, அதே உரையாடலில் ஸ்கிரீன்ஷாட்டை அனுப்புங்கள்.",
+  "pay.waBtn":"WhatsApp உரையாடலைத் திற","pay.waNum":"WhatsApp எண்","pay.upi":"UPI ID","pay.copy":"நகலெடு","pay.copied":"நகலெடுக்கப்பட்டது",
+  "pay.notSet":"சம்விக்தா குழு கட்டண விவரங்களை WhatsApp-ல் அனுப்பும்.",
+  "pay.doneH":"ஏற்கனவே செலுத்திவிட்டீர்களா?","pay.method":"எப்படிச் செலுத்தினீர்கள்?","pm.upi":"UPI / WhatsApp","pm.stripe":"ஆன்லைன் (Stripe)",
+  "pay.ref":"பரிவர்த்தனை அல்லது UPI குறிப்பு எண்","pay.submit":"நான் செலுத்திவிட்டேன்","pay.errRef":"உங்கள் கட்டணத்தின் குறிப்பு எண்ணை உள்ளிடுங்கள்.",
+  "pay.errSave":"இப்போது அனுப்ப முடியவில்லை. இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்.",
+  "pay.pending":"நன்றி! உங்கள் கட்டணத்தைச் சரிபார்த்து ஒரு நாளுக்குள் WhatsApp-ல் உறுதிசெய்வோம்.","pay.paid":"கட்டணம் உறுதி செய்யப்பட்டது. வகுப்பில் சந்திப்போம்!",
+  "status.unpaid":"செலுத்தப்படவில்லை","status.pending":"சரிபார்க்கப்படுகிறது","status.paid":"செலுத்தப்பட்டது",
+  "wa.msg":"வணக்கம் சம்விக்தா, நான் {courses} பாடநெறிகளில் சேர்ந்துள்ளேன். பெயர்: {name}. மொத்தக் கட்டணம்: {total}. என் கட்டணத்தை உறுதிசெய்யவும்.",
+  "set.h":"கட்டண அமைப்புகள்","set.p":"மாணவர்கள் கட்டணப் படியில் இவற்றைப் பார்ப்பார்கள். Stripe டாஷ்போர்டில் ஒவ்வொரு பாடநெறிக்கும் ஒரு Payment Link (நிலையான விலை) உருவாக்கி இங்கே ஒட்டுங்கள். இணைப்பு காலியாக இருந்தால் அந்தப் பாடநெறிக்கு ஆன்லைன் கட்டணம் காட்டப்படாது.",
+  "set.wa":"சம்விக்தா WhatsApp எண், நாட்டுக் குறியீட்டுடன்","set.upi":"UPI ID","set.stripe":"Stripe Payment Link · {code} ({fee})",
+  "set.save":"கட்டண அமைப்புகளைச் சேமி","set.saved":"சேமிக்கப்பட்டது.","set.badLink":"Stripe இணைப்புகள் https:// என்று தொடங்க வேண்டும்.","set.badWa":"WhatsApp எண்ணை நாட்டுக் குறியீட்டுடன் இலக்கங்களாக உள்ளிடுங்கள், எ.கா. 919876543210.","set.fail":"இப்போது சேமிக்க முடியவில்லை. மீண்டும் முயலுங்கள்.",
+  "a.markPaid":"செலுத்தியதாகக் குறி","a.collected":"உறுதிசெய்த கட்டணம்","a.ref":"குறிப்பு"
+ }
+};
+
+const COURSES = [
+ {code:"SAM-101",fee:199,found:true,apps:"Gemini / ChatGPT, Google Lens, Translate, Google Docs",
+  en:{name:"AI on Your Phone",blurb:"Use free AI apps in Tamil to write, translate, learn and stay safe online.",project:"A one-page resume and 3 English messages written with AI.",
+   weeks:[
+    {t:"Meet your AI helper",p:["What AI is, with everyday examples","Install Gemini or ChatGPT, sign in with Gmail","Ask questions by typing and by voice in Tamil"],hw:"Ask AI 10 questions; share your 2 best answers."},
+    {t:"Write in English with AI",p:["Gboard voice typing and Google Translate","Polite messages, leave letters, bank requests","Make it shorter, more formal, or simpler"],hw:"Write 3 real messages with AI."},
+    {t:"Learn anything with your camera",p:["Google Lens: notices, forms, medicine strips","Photograph a textbook page and ask AI to explain","Build a resume in Google Docs, save as PDF"],hw:"Finish and send your resume PDF."},
+    {t:"Stay safe and final project",p:["OTP, UPI, fake job and loan app scams","Spotting AI-made photos, voices and fake news","Strong passwords and 2-step verification"],hw:"Final project show and certificate."}]},
+  ta:{name:"உங்கள் போனில் AI",blurb:"இலவச AI செயலிகளைத் தமிழில் பயன்படுத்தி எழுதவும், மொழிபெயர்க்கவும், கற்கவும், ஆன்லைனில் பாதுகாப்பாக இருக்கவும் கற்றுக்கொள்ளுங்கள்.",project:"AI உதவியுடன் ஒரு பக்க resume மற்றும் 3 ஆங்கில செய்திகள்.",
+   weeks:[
+    {t:"உங்கள் AI உதவியாளரைச் சந்தியுங்கள்",p:["AI என்றால் என்ன — அன்றாட உதாரணங்கள்","Gemini அல்லது ChatGPT நிறுவி Gmail மூலம் உள்நுழைதல்","தமிழில் தட்டச்சு செய்தும் குரலிலும் கேள்வி கேட்குதல்"],hw:"AI-யிடம் 10 கேள்விகள் கேட்டு, சிறந்த 2 பதில்களைப் பகிருங்கள்."},
+    {t:"AI உடன் ஆங்கிலத்தில் எழுதுதல்",p:["Gboard குரல் தட்டச்சு மற்றும் Google Translate","மரியாதையான செய்திகள், விடுப்புக் கடிதம், வங்கி கோரிக்கைகள்","சுருக்கமாக, முறையாக, எளிமையாக மாற்றுதல்"],hw:"AI உதவியுடன் 3 உண்மையான செய்திகளை எழுதுங்கள்."},
+    {t:"கேமரா மூலம் எதையும் கற்றுக்கொள்ளுங்கள்",p:["Google Lens: அறிவிப்புகள், படிவங்கள், மருந்து அட்டைகள்","பாடப்புத்தகப் பக்கத்தைப் படம் எடுத்து AI-யிடம் விளக்கம் கேட்குதல்","Google Docs-ல் resume உருவாக்கி PDF ஆகச் சேமித்தல்"],hw:"உங்கள் resume PDF-ஐ முடித்து அனுப்புங்கள்."},
+    {t:"பாதுகாப்பு மற்றும் இறுதி திட்டப்பணி",p:["OTP, UPI, போலி வேலை மற்றும் கடன் செயலி மோசடிகள்","AI உருவாக்கிய படங்கள், குரல்கள், போலிச் செய்திகளைக் கண்டறிதல்","வலுவான கடவுச்சொல் மற்றும் 2-படி சரிபார்ப்பு"],hw:"இறுதி திட்டப்பணி காட்சி மற்றும் சான்றிதழ்."}]}},
+ {code:"SAM-102",fee:349,apps:"Gemini / ChatGPT, CapCut, Canva, Instagram, YouTube",
+  en:{name:"Make Reels & Videos with AI",blurb:"Plan, shoot, edit and post short videos using only a phone and free AI tools.",project:"3 published reels on one theme, with Tamil captions and a cover.",
+   weeks:[
+    {t:"Plan your video with AI",p:["What stops people scrolling: the first 3 seconds","The Hook → Show → Ask formula","AI writes reel ideas and a 30-second Tamil script"],hw:"Scripts for 3 reels."},
+    {t:"Shoot like a pro",p:["Vertical 9:16, light, grid lines, 1080p","Clear sound with an earphone mic","Close, medium, wide and B-roll shots"],hw:"Shoot clips for reels 1 and 2."},
+    {t:"Edit with CapCut and AI",p:["Trim, arrange, speed, transitions","Tamil auto-captions and text on screen","Free music and AI voiceover, export 1080p"],hw:"Edit reel 2 and share it."},
+    {t:"Post and grow",p:["Canva cover with big Tamil text","Captions, hashtags, location, posting times","Reading views and saves; earning from reels"],hw:"Final project show: 3 reels posted."}]},
+  ta:{name:"AI உடன் ரீல்ஸ் & வீடியோ",blurb:"போன் மற்றும் இலவச AI கருவிகள் மட்டும் கொண்டு குறும் வீடியோக்களைத் திட்டமிடவும், படம் பிடிக்கவும், எடிட் செய்யவும், பதிவிடவும் கற்றுக்கொள்ளுங்கள்.",project:"தமிழ் வசனங்கள் மற்றும் அட்டைப்படத்துடன் ஒரே தலைப்பில் 3 ரீல்ஸ் பதிவிடுதல்.",
+   weeks:[
+    {t:"AI உடன் வீடியோ திட்டமிடல்",p:["மக்களை நிறுத்த வைப்பது எது: முதல் 3 வினாடிகள்","Hook → Show → Ask முறை","AI மூலம் ரீல் யோசனைகள் மற்றும் 30 வினாடி தமிழ் ஸ்கிரிப்ட்"],hw:"3 ரீல்ஸுக்கான ஸ்கிரிப்ட்கள்."},
+    {t:"போனில் தொழில்முறை போல படம் பிடித்தல்",p:["செங்குத்து 9:16, வெளிச்சம், கிரிட், 1080p","இயர்போன் மைக் மூலம் தெளிவான ஒலி","நெருக்கமான, நடுத்தர, அகலமான மற்றும் B-roll ஷாட்கள்"],hw:"ரீல் 1 மற்றும் 2-க்கான கிளிப்புகளைப் படம் பிடியுங்கள்."},
+    {t:"CapCut மற்றும் AI உடன் எடிட்டிங்",p:["வெட்டுதல், வரிசைப்படுத்துதல், வேகம், மாற்றங்கள்","தமிழ் தானியங்கி வசனங்கள் மற்றும் திரை எழுத்துக்கள்","இலவச இசை, AI குரல், 1080p ஏற்றுமதி"],hw:"ரீல் 2-ஐ எடிட் செய்து பகிருங்கள்."},
+    {t:"பதிவிட்டு வளருங்கள்",p:["பெரிய தமிழ் எழுத்துடன் Canva அட்டைப்படம்","வசனங்கள், ஹேஷ்டேக்குகள், இடம், பதிவிடும் நேரம்","பார்வைகள், சேமிப்புகளைப் புரிந்து ரீல்ஸ் மூலம் சம்பாதித்தல்"],hw:"இறுதி காட்சி: 3 ரீல்ஸ் பதிவிடப்பட்டது."}]}},
+ {code:"SAM-103",fee:399,apps:"WhatsApp Business, Meta Business Suite, Canva, Gemini / ChatGPT",
+  en:{name:"AI Helpers for WhatsApp & Social Media",blurb:"Set up auto-replies, catalogs and scheduled posts so a small business runs with less daily effort.",project:"A full setup for one business: auto-replies, catalog, a month of posts, Instagram replies.",
+   weeks:[
+    {t:"WhatsApp Business that replies for you",p:["Business profile written with AI","Greeting and away messages","5 quick replies: price, location, timing, payment"],hw:"Write 10 quick replies with AI."},
+    {t:"Catalog, labels and broadcast",p:["Product catalog with AI descriptions","Labels to track orders and payments","Broadcast offers without spamming"],hw:"Catalog with 8+ products."},
+    {t:"A month of posts in one hour",p:["Link Instagram, Facebook and WhatsApp","AI 30-day content plan","Design in Canva and schedule 2 weeks"],hw:"Schedule the next 2 weeks."},
+    {t:"Auto-replies and selling the service",p:["Automated replies and FAQ buttons","Keyword replies like \"price\"","Package and price this for local shops"],hw:"Final project demo."}]},
+  ta:{name:"WhatsApp & சமூக ஊடக AI உதவியாளர்",blurb:"ஆட்டோ-பதில்கள், கேட்டலாக், திட்டமிட்ட பதிவுகளை அமைத்து சிறு தொழிலைக் குறைந்த தினசரி உழைப்பில் நடத்துங்கள்.",project:"ஒரு தொழிலுக்கு முழு அமைப்பு: ஆட்டோ-பதில்கள், கேட்டலாக், ஒரு மாத பதிவுகள், Instagram பதில்கள்.",
+   weeks:[
+    {t:"தானாக பதில் சொல்லும் WhatsApp Business",p:["AI எழுதிய தொழில் விவரம்","வரவேற்பு மற்றும் விலகல் செய்திகள்","5 விரைவு பதில்கள்: விலை, இடம், நேரம், பணம்"],hw:"AI உடன் 10 விரைவு பதில்கள் எழுதுங்கள்."},
+    {t:"கேட்டலாக், லேபிள்கள், ப்ராட்காஸ்ட்",p:["AI விவரணையுடன் பொருள் கேட்டலாக்","ஆர்டர், பணம் கண்காணிக்க லேபிள்கள்","ஸ்பேம் இல்லாமல் சலுகைகளை அனுப்புதல்"],hw:"8+ பொருட்களுடன் கேட்டலாக்."},
+    {t:"ஒரு மணி நேரத்தில் ஒரு மாத பதிவுகள்",p:["Instagram, Facebook, WhatsApp இணைத்தல்","AI 30 நாள் உள்ளடக்கத் திட்டம்","Canva-ல் வடிவமைத்து 2 வாரங்களுக்குத் திட்டமிடுதல்"],hw:"அடுத்த 2 வாரப் பதிவுகளைத் திட்டமிடுங்கள்."},
+    {t:"ஆட்டோ-பதில்கள் மற்றும் சேவையை விற்றல்",p:["தானியங்கி பதில்கள் மற்றும் FAQ பொத்தான்கள்","\"price\" போன்ற முக்கியச் சொல் பதில்கள்","உள்ளூர் கடைகளுக்கு இந்தச் சேவையின் விலை நிர்ணயம்"],hw:"இறுதி திட்டப்பணி காட்சி."}]}},
+ {code:"SAM-104",fee:449,apps:"Canva Websites, Google Business Profile, WhatsApp, UPI",
+  en:{name:"Build Your Website or Online Shop with AI",blurb:"Put a business online without code: Google Maps listing, a one-page website and WhatsApp orders.",project:"A live website with a WhatsApp order button, Maps link and UPI details.",
+   weeks:[
+    {t:"Get found on Google",p:["How customers search: Maps, Google, links","Create a Google Business Profile","AI writes the description, services and FAQs"],hw:"8 photos and all website text."},
+    {t:"Build the website on your phone",p:["Pick a Canva website template and colours","Add About, Products, Photos, Contact","Check it on mobile and fix text size"],hw:"Complete all sections."},
+    {t:"Orders and payments",p:["\"Order on WhatsApp\" button with a ready message","Maps and call buttons","UPI ID or QR code, payment safety; publish"],hw:"Share the link with 5 people."},
+    {t:"Improve, share and earn",p:["Fix feedback, add reviews","Link the site everywhere; QR poster for the shop","Building sites for local businesses"],hw:"Final project: live website."}]},
+  ta:{name:"AI உடன் உங்கள் இணையதளம்",blurb:"கோடிங் இல்லாமல் தொழிலை ஆன்லைனில் கொண்டு வாருங்கள்: Google Maps பட்டியல், ஒரு பக்க இணையதளம், WhatsApp ஆர்டர்கள்.",project:"WhatsApp ஆர்டர் பொத்தான், Maps இணைப்பு, UPI விவரங்களுடன் நேரடி இணையதளம்.",
+   weeks:[
+    {t:"Google-ல் கண்டறியப்படுங்கள்",p:["வாடிக்கையாளர்கள் எப்படித் தேடுகிறார்கள்: Maps, Google, இணைப்புகள்","Google Business Profile உருவாக்குதல்","AI எழுதும் விவரம், சேவைகள், கேள்வி-பதில்கள்"],hw:"8 படங்கள் மற்றும் இணையதள உரை முழுவதும்."},
+    {t:"போனில் இணையதளம் உருவாக்குதல்",p:["Canva இணையதள டெம்ப்ளேட் மற்றும் நிறங்கள்","எங்களைப் பற்றி, பொருட்கள், படங்கள், தொடர்பு பகுதிகள்","மொபைலில் சரிபார்த்து எழுத்து அளவைத் திருத்துதல்"],hw:"அனைத்துப் பகுதிகளையும் முடியுங்கள்."},
+    {t:"ஆர்டர்கள் மற்றும் பணம் பெறுதல்",p:["தயார் செய்தியுடன் \"WhatsApp-ல் ஆர்டர்\" பொத்தான்","Maps மற்றும் அழைப்பு பொத்தான்கள்","UPI ID அல்லது QR, பணப் பாதுகாப்பு; வெளியிடுதல்"],hw:"இணைப்பை 5 பேருடன் பகிருங்கள்."},
+    {t:"மேம்படுத்தி, பகிர்ந்து, சம்பாதியுங்கள்",p:["கருத்துகளைச் சரிசெய்து மதிப்புரைகள் சேர்த்தல்","எல்லா இடத்திலும் இணைப்பு; கடைக்கு QR போஸ்டர்","உள்ளூர் தொழில்களுக்கு இணையதளம் உருவாக்குதல்"],hw:"இறுதி திட்டப்பணி: நேரடி இணையதளம்."}]}},
+ {code:"SAM-105",fee:299,apps:"Gemini / ChatGPT voice mode, WhatsApp voice notes",
+  en:{name:"Spoken English with an AI Tutor",blurb:"Speak everyday English with confidence by practising 15 minutes a day with a free AI voice tutor.",project:"A 2-minute speaking test: self-introduction and one interview answer.",
+   weeks:[
+    {t:"Break the fear: about me",p:["Why mistakes are fine","Set up AI voice practice","Self-introduction patterns; everyone speaks"],hw:"15 min AI practice daily + voice note."},
+    {t:"Everyday situations",p:["Can I have…? How much is…? Where is…?","Role-play: shop, bus, bank counter","AI plays the shopkeeper or bank staff"],hw:"Daily practice + voice notes."},
+    {t:"Phone calls and offices",p:["Phone phrases: may I speak to…, please repeat","Office and job enquiries","Simple tenses through examples"],hw:"Daily practice + voice notes."},
+    {t:"Job interview and speaking test",p:["5 common interview questions, answers built with AI","Body language for video interviews","Final speaking test"],hw:"Certificate after the test."}]},
+  ta:{name:"AI ஆசிரியருடன் ஆங்கிலம் பேசுதல்",blurb:"இலவச AI குரல் ஆசிரியருடன் தினமும் 15 நிமிடம் பயிற்சி செய்து அன்றாட ஆங்கிலத்தை நம்பிக்கையுடன் பேசுங்கள்.",project:"2 நிமிட பேச்சுத் தேர்வு: சுய அறிமுகம் மற்றும் ஒரு நேர்காணல் பதில்.",
+   weeks:[
+    {t:"பயத்தை உடையுங்கள்: என்னைப் பற்றி",p:["தவறுகள் செய்வது சரியே","AI குரல் பயிற்சியை அமைத்தல்","சுய அறிமுக வாக்கிய அமைப்புகள்; அனைவரும் பேசுதல்"],hw:"தினமும் 15 நிமிட AI பயிற்சி + குரல் செய்தி."},
+    {t:"அன்றாடச் சூழல்கள்",p:["Can I have…? How much is…? Where is…?","நடிப்புப் பயிற்சி: கடை, பேருந்து, வங்கி","AI கடைக்காரர் அல்லது வங்கி ஊழியராக நடிக்கும்"],hw:"தினசரி பயிற்சி + குரல் செய்திகள்."},
+    {t:"போன் அழைப்புகள் மற்றும் அலுவலகங்கள்",p:["போன் வாக்கியங்கள்: may I speak to…, please repeat","அலுவலக மற்றும் வேலை விசாரணைகள்","உதாரணங்கள் மூலம் எளிய காலங்கள்"],hw:"தினசரி பயிற்சி + குரல் செய்திகள்."},
+    {t:"வேலை நேர்காணல் மற்றும் பேச்சுத் தேர்வு",p:["AI உதவியுடன் 5 பொதுவான நேர்காணல் கேள்விகள்","வீடியோ நேர்காணலுக்கான உடல்மொழி","இறுதி பேச்சுத் தேர்வு"],hw:"தேர்வுக்குப் பின் சான்றிதழ்."}]}}
+];
+
+const DISTRICTS = [["Ariyalur","அரியலூர்"],["Chengalpattu","செங்கல்பட்டு"],["Chennai","சென்னை"],["Coimbatore","கோயம்புத்தூர்"],["Cuddalore","கடலூர்"],["Dharmapuri","தருமபுரி"],["Dindigul","திண்டுக்கல்"],["Erode","ஈரோடு"],["Kallakurichi","கள்ளக்குறிச்சி"],["Kancheepuram","காஞ்சிபுரம்"],["Kanniyakumari","கன்னியாகுமரி"],["Karur","கரூர்"],["Krishnagiri","கிருஷ்ணகிரி"],["Madurai","மதுரை"],["Mayiladuthurai","மயிலாடுதுறை"],["Nagapattinam","நாகப்பட்டினம்"],["Namakkal","நாமக்கல்"],["Nilgiris","நீலகிரி"],["Perambalur","பெரம்பலூர்"],["Pudukkottai","புதுக்கோட்டை"],["Ramanathapuram","இராமநாதபுரம்"],["Ranipet","இராணிப்பேட்டை"],["Salem","சேலம்"],["Sivaganga","சிவகங்கை"],["Tenkasi","தென்காசி"],["Thanjavur","தஞ்சாவூர்"],["Theni","தேனி"],["Thoothukudi","தூத்துக்குடி"],["Tiruchirappalli","திருச்சிராப்பள்ளி"],["Tirunelveli","திருநெல்வேலி"],["Tirupathur","திருப்பத்தூர்"],["Tiruppur","திருப்பூர்"],["Tiruvallur","திருவள்ளூர்"],["Tiruvannamalai","திருவண்ணாமலை"],["Tiruvarur","திருவாரூர்"],["Vellore","வேலூர்"],["Viluppuram","விழுப்புரம்"],["Virudhunagar","விருதுநகர்"],["Outside Tamil Nadu","தமிழ்நாட்டிற்கு வெளியே"]];
+
+
+Object.assign(T.en, {
+  "a.p":"Only signed-in Samviikta admins can see this list.",
+  "ft.team":"Team login","ft.copy":"Samviikta Institute",
+  "adm.title":"Samviikta admin","adm.signin":"Sign in with Google","adm.signout":"Sign out",
+  "adm.gateP":"Sign in with the Google account added as a Samviikta admin.",
+  "adm.notAdmin":"This Google account isn't a Samviikta admin. Ask the owner to add {email} in Firebase, or sign in with another account.",
+  "adm.notConfigured":"Firebase isn't set up yet. Paste your Firebase details into the settings at the top of index.html (see the setup guide).",
+  "adm.signinFail":"Sign-in didn't complete. Allow pop-ups for this site and try again.",
+  "adm.back":"Back to website","a.download":"Download CSV","pay.upiApp":"Pay in UPI app"
+});
+Object.assign(T.ta, {
+  "a.p":"உள்நுழைந்த சம்விக்தா நிர்வாகிகள் மட்டுமே இந்தப் பட்டியலைப் பார்க்க முடியும்.",
+  "ft.team":"குழு உள்நுழைவு","ft.copy":"சம்விக்தா நிறுவனம்",
+  "adm.title":"சம்விக்தா நிர்வாகம்","adm.signin":"Google மூலம் உள்நுழைக","adm.signout":"வெளியேறு",
+  "adm.gateP":"சம்விக்தா நிர்வாகியாகச் சேர்க்கப்பட்ட Google கணக்கில் உள்நுழையுங்கள்.",
+  "adm.notAdmin":"இந்த Google கணக்கு சம்விக்தா நிர்வாகி அல்ல. {email}-ஐ Firebase-ல் சேர்க்க உரிமையாளரிடம் கேளுங்கள், அல்லது வேறு கணக்கில் உள்நுழையுங்கள்.",
+  "adm.notConfigured":"Firebase இன்னும் அமைக்கப்படவில்லை. index.html-ன் மேலே உள்ள அமைப்புகளில் உங்கள் Firebase விவரங்களை ஒட்டுங்கள் (அமைப்பு வழிகாட்டியைப் பார்க்கவும்).",
+  "adm.signinFail":"உள்நுழைவு முடியவில்லை. இந்தத் தளத்திற்கு pop-up-களை அனுமதித்து மீண்டும் முயலுங்கள்.",
+  "adm.back":"இணையதளத்திற்குத் திரும்பு","a.download":"CSV பதிவிறக்கு","pay.upiApp":"UPI செயலியில் செலுத்து"
+});
+
+// Loads Firebase from Google's CDN only when a config is present.
+
+const V = "10.12.2";
+const firebaseReady = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
+
+let cached = null;
+function fb() {
+  if (!firebaseReady) return Promise.resolve(null);
+  if (!cached) {
+    cached = Promise.all([
+      import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`),
+      import(`https://www.gstatic.com/firebasejs/${V}/firebase-auth.js`),
+      import(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore.js`)
+    ]).then(([appMod, auth, fs]) => {
+      const app = appMod.initializeApp(firebaseConfig);
+      return { app, auth: auth.getAuth(app), authMod: auth, db: fs.getFirestore(app), fs };
+    }).catch(err => { console.error("Firebase failed to load", err); return null; });
+  }
+  return cached;
+}
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = n => "₹" + n + "/-";
+const feeOf = codes => (codes || []).reduce((s, code) => s + ((COURSES.find(x => x.code === code) || {}).fee || 0), 0);
+const safeLink = u => typeof u === "string" && /^https:\/\/[^\s"'<>]+$/.test(u.trim()) ? u.trim() : "";
+
+let lang = "ta";
+try { const s = localStorage.getItem("samviikta-lang"); if (s === "en" || s === "ta") lang = s; } catch {}
+const getLang = () => lang;
+const C = c => c[lang];
+function t(k, vars) {
+  let s = T[lang][k] ?? T.en[k] ?? k;
+  if (vars) for (const [a, b] of Object.entries(vars)) s = s.replace("{" + a + "}", b);
+  return s;
+}
+
+function applyStatic() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+}
+
+function setupLangToggle(onChange) {
+  document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
+    lang = b.dataset.lang;
+    try { localStorage.setItem("samviikta-lang", lang); } catch {}
+    applyStatic(); onChange();
+  }));
+}
+
+const defaultPayments = payments;
+const ADMIN_MODE = location.hash === "#admin";
+window.addEventListener("hashchange", () => {
+  if ((location.hash === "#admin") !== ADMIN_MODE) location.reload();
+});
+
+function startSite() {
+let openDetail = null, doneState = null, lastErr = "";
+let firebase = null, myRef = null;
+let settings = mergeSettings({});
+
+function mergeSettings(remote) {
+  const stripe = { ...defaultPayments.stripe };
+  for (const [k, v] of Object.entries(remote.stripe || {})) if (v) stripe[k] = v;
+  return { whatsapp: remote.whatsapp || defaultPayments.whatsapp, upi: remote.upi || defaultPayments.upi, stripe };
+}
+
+/* ---------- rendering ---------- */
+function renderAll() {
+  renderCourses(); renderFormCourses(); renderDistricts();
+  if (openDetail) showDetail(openDetail, false);
+  if (doneState) showDone(doneState.f, doneState.saved);
+  if (!$("#formErr").hidden && lastErr) $("#formErr").textContent = t(lastErr);
+  $("#submitBtn").textContent = t("fl.submit");
+}
+
+function renderCourses() {
+  const other = getLang() === "ta" ? "en" : "ta";
+  $("#courseGrid").innerHTML = COURSES.map(c => `
+    <article class="course${c.found ? " found" : ""}">
+      <div class="top"><span class="code">${c.code}</span><span class="fee">${fmt(c.fee)}<small>${esc(t("perCourse"))}</small></span></div>
+      <h3>${esc(C(c).name)}${c.found ? `<span class="badge">${esc(t("badge"))}</span>` : ""}</h3>
+      <div class="tname" lang="${other}">${esc(c[other].name)}</div>
+      <p>${esc(C(c).blurb)}</p>
+      <p class="proj"><b>${esc(t("proj"))}</b> ${esc(C(c).project)}</p>
+      <div class="row">
+        <button class="btn line" type="button" data-show="${c.code}">${esc(t("btn.plan"))}</button>
+        <button class="btn solid" type="button" data-enroll="${c.code}">${esc(t("btn.enroll"))}</button>
+      </div>
+    </article>`).join("");
+}
+
+function showDetail(code, scroll = true) {
+  const c = COURSES.find(x => x.code === code), d = $("#detail");
+  openDetail = code;
+  d.innerHTML = `
+    <div class="detail-head">
+      <h3>${c.code} · ${esc(C(c).name)}<div class="meta"><b>${esc(t("fee"))}: ${fmt(c.fee)}</b> · ${esc(t("meta"))}${esc(c.apps)}</div></h3>
+      <button class="close" type="button" id="closeDetail">${esc(t("close"))}</button>
+    </div>
+    <div class="weeks">${C(c).weeks.map((w, i) => `
+      <div class="week"><div class="wk">${esc(t("week"))} ${i + 1}</div><h4>${esc(w.t)}</h4>
+        <ul>${w.p.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+        <div class="hw"><b>${esc(t(i === 3 ? "finish" : "hw"))}</b> ${esc(w.hw)}</div></div>`).join("")}
+    </div>
+    <div class="detail-foot"><span>${esc(t("dfoot"))}</span>
+      <button class="btn solid" type="button" data-enroll="${c.code}">${esc(t("btn.enroll"))} · ${fmt(c.fee)}</button></div>`;
+  d.hidden = false;
+  $("#closeDetail").onclick = () => { d.hidden = true; openDetail = null; };
+  if (scroll) d.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+}
+
+function renderFormCourses() {
+  const checked = new Set(COURSES.map(c => c.code).filter(code => { const b = document.getElementById("c-" + code); return b ? b.checked : code === "SAM-101"; }));
+  $("#fCourses").innerHTML = COURSES.map(c => `<label for="c-${c.code}"><input type="checkbox" id="c-${c.code}" value="${c.code}"${checked.has(c.code) ? " checked" : ""}> <span class="cname"><b>${c.code}</b> ${esc(C(c).name)}</span><span class="cfee">${fmt(c.fee)}</span></label>`).join("");
+  updateTotal();
+}
+function updateTotal() { $("#feeTotal").textContent = fmt(feeOf(selectedCourses())); }
+const selectedCourses = () => COURSES.map(c => c.code).filter(code => { const b = document.getElementById("c-" + code); return b && b.checked; });
+
+function renderDistricts() {
+  const sel = $("#fDistrict"), cur = sel.value;
+  sel.innerHTML = `<option value="">${esc(t("fl.chooseDistrict"))}</option>` + DISTRICTS.map(([en, ta]) => `<option value="${en}">${esc(getLang() === "ta" ? ta : en)}</option>`).join("");
+  sel.value = cur;
+}
+
+/* ---------- enrollment ---------- */
+function readForm() {
+  return {
+    name: $("#fName").value.trim(),
+    phone: $("#fPhone").value.replace(/\D/g, "").slice(-10),
+    age: $("#fAge").value ? Number($("#fAge").value) : null,
+    district: $("#fDistrict").value,
+    village: $("#fVillage").value.trim(),
+    courses: selectedCourses(),
+    time: (document.querySelector("input[name=fTime]:checked") || {}).value || "",
+    english: $("#fEnglish").value,
+    device: $("#fDevice").value,
+    language: getLang()
+  };
+}
+function validate(f) {
+  if (!f.name) return "err.name";
+  if (f.phone.length !== 10) return "err.phone";
+  if (!f.district) return "err.district";
+  if (!f.courses.length) return "err.courses";
+  if (!$("#fConsent").checked) return "err.consent";
+  return "";
+}
+function summary(f) {
+  return `Samviikta enrollment\nName: ${f.name}\nWhatsApp: ${f.phone}\nAge: ${f.age ?? "-"}\nDistrict: ${f.district}${f.village ? " (" + f.village + ")" : ""}\nCourses: ${f.courses.join(", ")}\nTotal fee: ${fmt(feeOf(f.courses))}\nClass time: ${f.time}\nEnglish: ${f.english}\nDevice: ${f.device}`;
+}
+function fillForm(f) {
+  $("#fName").value = f.name || ""; $("#fPhone").value = f.phone || ""; $("#fAge").value = f.age ?? "";
+  $("#fDistrict").value = f.district || ""; $("#fVillage").value = f.village || "";
+  COURSES.forEach(c => { document.getElementById("c-" + c.code).checked = (f.courses || []).includes(c.code); });
+  const r = [...document.querySelectorAll("input[name=fTime]")].find(x => x.value === f.time); if (r) r.checked = true;
+  if (f.english) $("#fEnglish").value = f.english;
+  if (f.device) $("#fDevice").value = f.device;
+  $("#fConsent").checked = true;
+  updateTotal();
+}
+
+$("#enrollForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = readForm(); lastErr = validate(f);
+  const err = $("#formErr"); err.hidden = !lastErr; err.textContent = lastErr ? t(lastErr) : "";
+  if (lastErr) return;
+  if (!myRef) { showDone(f, false); return; }
+  const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = t("fl.saving");
+  try {
+    const { fs } = firebase;
+    const prev = await fs.getDoc(myRef);
+    const old = prev.exists() ? prev.data() : null;
+    const doc = {
+      ...f, amount: feeOf(f.courses),
+      payment: (old && old.payment) || { status: "unpaid" },
+      createdAt: (old && old.createdAt) || new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    await fs.setDoc(myRef, doc);
+    showDone(doc, true);
+  } catch (ex) {
+    console.error(ex);
+    lastErr = "err.save"; err.hidden = false; err.textContent = t(lastErr);
+  } finally { btn.disabled = false; btn.textContent = t("fl.submit"); }
+});
+
+/* ---------- confirmation + payment ---------- */
+function showDone(f, saved) {
+  doneState = { f, saved };
+  const names = (f.courses || []).map(code => { const c = COURSES.find(x => x.code === code); return c ? C(c).name : code; });
+  const st = (f.payment && f.payment.status) || "unpaid";
+  $("#enrollDone").innerHTML = saved
+    ? `<div class="ok"><h3>${esc(t("done.title", { name: (f.name || "").split(" ")[0] }))}</h3>
+        <p><b>${esc(t("done.courses"))}</b> ${names.map(esc).join(", ")}</p>
+        <p class="note">${esc(t("done.note", { phone: f.phone }))}</p>
+        ${payHtml(f)}
+        ${st === "unpaid" ? `<div class="btns"><button class="btn line" type="button" id="editEnroll">${esc(t("done.change"))}</button></div>` : ""}</div>`
+    : `<div class="ok"><h3>${esc(t("almost"))}</h3>
+        <p>${esc(t("almost.p"))}</p>
+        <pre class="copy" id="sumText">${esc(summary(f))}</pre>
+        <div class="btns"><button class="btn solid" type="button" data-copy-summary>${esc(t("copy"))}</button><button class="btn line" type="button" id="editEnroll">${esc(t("edit"))}</button></div>
+        <p class="note" id="copySumNote" aria-live="polite"></p>
+        ${payHtml(f)}</div>`;
+  $("#enrollForm").hidden = true; $("#enrollDone").hidden = false;
+  const ed = $("#editEnroll");
+  if (ed) ed.onclick = () => { doneState = null; $("#enrollForm").hidden = false; $("#enrollDone").hidden = true; };
+}
+
+function payHtml(f) {
+  const codes = f.courses || [], total = feeOf(codes);
+  const st = (f.payment && f.payment.status) || "unpaid";
+  const bill = `<div class="bill">${codes.map(code => { const c = COURSES.find(x => x.code === code); return c ? `<div><span>${c.code} · ${esc(C(c).name)}</span><span>${fmt(c.fee)}</span></div>` : ""; }).join("")}
+    <div class="tot"><span>${esc(t("total"))}</span><span>${fmt(total)}</span></div></div>`;
+  if (st === "paid") return `<div class="pay">${bill}<p><span class="status paid">${esc(t("status.paid"))}</span> ${esc(t("pay.paid"))}</p></div>`;
+  if (st === "pending") return `<div class="pay">${bill}<p><span class="status pending">${esc(t("status.pending"))}</span> ${esc(t("pay.pending"))}</p></div>`;
+
+  const links = codes.map(code => {
+    const u = safeLink(settings.stripe[code]), c = COURSES.find(x => x.code === code);
+    return u && c ? `<a class="btn solid" href="${esc(u)}" target="_blank" rel="noopener">${esc(t("pay.payFor", { fee: fmt(c.fee), code }))}</a>` : "";
+  }).filter(Boolean);
+  const wa = String(settings.whatsapp || "").replace(/\D/g, "");
+  const msg = t("wa.msg", { courses: codes.join(", "), name: f.name || "", total: fmt(total) });
+  const waBlock = wa.length >= 10
+    ? `<a class="btn solid" href="https://wa.me/${wa}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${esc(t("pay.waBtn"))}</a>
+       <div class="kv">${esc(t("pay.waNum"))}: <code>+${esc(wa)}</code><button type="button" data-copy="+${esc(wa)}">${esc(t("pay.copy"))}</button></div>`
+    : `<p>${esc(t("pay.notSet"))}</p>`;
+  const upi = String(settings.upi || "").trim();
+  const upiBlock = upi ? `<div class="kv">${esc(t("pay.upi"))}: <code>${esc(upi)}</code><button type="button" data-copy="${esc(upi)}">${esc(t("pay.copy"))}</button>
+      <a class="btn line" style="padding:6px 14px;min-height:36px" href="upi://pay?pa=${encodeURIComponent(upi)}&pn=Samviikta&am=${total}&cu=INR&tn=${encodeURIComponent("Samviikta " + codes.join(" "))}">${esc(t("pay.upiApp"))}</a></div>` : "";
+  const claim = myRef ? `<form class="opt" id="payForm" novalidate>
+      <h4>${esc(t("pay.doneH"))}</h4>
+      <div class="two">
+        <label for="pMethod">${esc(t("pay.method"))}<select id="pMethod"><option value="UPI / WhatsApp">${esc(t("pm.upi"))}</option><option value="Stripe">${esc(t("pm.stripe"))}</option></select></label>
+        <label for="pRef">${esc(t("pay.ref"))}<input id="pRef" type="text" autocomplete="off"></label>
+      </div>
+      <p class="err" id="payErr" role="alert" hidden></p>
+      <div class="btns"><button class="btn line" type="submit" id="paySubmit">${esc(t("pay.submit"))}</button></div>
+    </form>` : "";
+  return `<div class="pay">
+    <h3>${esc(t("pay.h"))}</h3>
+    <p class="note" style="font-size:.95rem">${esc(t("pay.p"))}</p>
+    ${bill}
+    <div class="opt"><h4>${esc(t("pay.online"))}</h4>
+      ${links.length ? `<p>${esc(t("pay.onlineP"))}</p><div class="btns">${links.join("")}</div>` : `<p>${esc(t("pay.onlineSoon"))}</p>`}</div>
+    <div class="opt"><h4>${esc(t("pay.wa"))}</h4><p>${esc(t("pay.waP"))}</p>${waBlock}${upiBlock}</div>
+    ${claim}
+  </div>`;
+}
+
+async function copyText(text, onOk, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); onOk(); }
+  catch {
+    if (fallbackEl) { const r = document.createRange(); r.selectNodeContents(fallbackEl); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  }
+}
+
+document.addEventListener("click", e => {
+  const s = e.target.closest("[data-show]"); if (s) showDetail(s.dataset.show);
+  const en = e.target.closest("[data-enroll]");
+  if (en) {
+    const box = document.getElementById("c-" + en.dataset.enroll);
+    if (box) { box.checked = true; updateTotal(); }
+    $("#enroll").scrollIntoView({ block: "start" });
+  }
+  const cp = e.target.closest("[data-copy]");
+  if (cp) copyText(cp.dataset.copy, () => { cp.textContent = t("pay.copied"); }, cp.previousElementSibling);
+  if (e.target.closest("[data-copy-summary]") && doneState)
+    copyText(summary(doneState.f), () => { $("#copySumNote").textContent = t("copied"); }, $("#sumText"));
+});
+
+document.addEventListener("submit", async e => {
+  if (e.target.id !== "payForm") return;
+  e.preventDefault();
+  const ref = $("#pRef").value.trim(), method = $("#pMethod").value, err = $("#payErr");
+  if (!ref) { err.hidden = false; err.textContent = t("pay.errRef"); return; }
+  const btn = $("#paySubmit"); btn.disabled = true;
+  const payment = { status: "pending", method, ref: ref.slice(0, 80), at: new Date().toISOString() };
+  try {
+    await firebase.fs.updateDoc(myRef, { payment, updatedAt: new Date().toISOString() });
+    doneState.f = { ...doneState.f, payment };
+    showDone(doneState.f, true);
+  } catch (ex) { console.error(ex); err.hidden = false; err.textContent = t("pay.errSave"); btn.disabled = false; }
+});
+
+$("#fCourses").addEventListener("change", updateTotal);
+
+/* ---------- start ---------- */
+applyStatic();
+renderAll();
+setupLangToggle(renderAll);
+$("#year").textContent = new Date().getFullYear();
+
+(async () => {
+  firebase = await fb();
+  if (!firebase) return;
+  const { auth, authMod, db, fs } = firebase;
+  fs.onSnapshot(fs.doc(db, "settings", "payment"), snap => {
+    settings = mergeSettings(snap.exists() ? snap.data() : {});
+    if (doneState) showDone(doneState.f, doneState.saved);
+  }, err => console.warn("Payment settings unavailable", err));
+  try {
+    if (!auth.currentUser) await authMod.signInAnonymously(auth);
+    myRef = fs.doc(db, "enrollments", auth.currentUser.uid);
+    const snap = await fs.getDoc(myRef);
+    if (snap.exists()) { fillForm(snap.data()); showDone(snap.data(), true); }
+  } catch (ex) {
+    console.warn("Enrollment saving unavailable; using WhatsApp fallback.", ex);
+    myRef = null;
+  }
+})();
+}
+
+function startAdmin() {
+let firebase = null, allRows = [], adminState = "loading", settings = {}, setDirty = false;
+let unsubs = [], gateKey = "adm.gateP", gateEmail = "";
+
+/* ---------- rendering ---------- */
+function renderAll() {
+  $("#gateMsg").textContent = t(gateKey, { email: gateEmail });
+  const fc = $("#filterCourse"), cur = fc.value;
+  fc.innerHTML = `<option value="">${esc(t("a.all"))}</option>` + COURSES.map(c => `<option value="${c.code}">${c.code} · ${esc(C(c).name)}</option>`).join("");
+  fc.value = cur;
+  $("#thead").innerHTML = T[getLang()].th.map(h => `<th scope="col">${esc(h)}</th>`).join("");
+  const vals = {};
+  COURSES.forEach(c => { const el = document.getElementById("s-" + c.code); if (el) vals[c.code] = el.value; });
+  $("#sStripe").innerHTML = COURSES.map(c => `<label for="s-${c.code}"><span>${esc(t("set.stripe", { code: c.code, fee: fmt(c.fee) }))}</span><input id="s-${c.code}" type="url" placeholder="https://buy.stripe.com/…"></label>`).join("");
+  COURSES.forEach(c => { if (vals[c.code] != null) document.getElementById("s-" + c.code).value = vals[c.code]; });
+  if (!setDirty) fillSettings();
+  renderTable();
+}
+
+function fillSettings() {
+  $("#sWa").value = settings.whatsapp || "";
+  $("#sUpi").value = settings.upi || "";
+  COURSES.forEach(c => { const el = document.getElementById("s-" + c.code); if (el) el.value = (settings.stripe || {})[c.code] || ""; });
+}
+
+function renderTable() {
+  const fc = $("#filterCourse").value;
+  const rows = allRows.filter(r => !fc || (r.courses || []).includes(fc));
+  const collected = allRows.filter(r => r.payment && r.payment.status === "paid").reduce((s, r) => s + (r.amount ?? feeOf(r.courses)), 0);
+  $("#stats").innerHTML =
+    `<div class="stat"><div class="v">${allRows.length}</div><div class="l">${esc(t("a.total"))}</div></div>` +
+    `<div class="stat"><div class="v">${fmt(collected)}</div><div class="l">${esc(t("a.collected"))}</div></div>` +
+    COURSES.map(c => `<div class="stat"><div class="v">${allRows.filter(r => (r.courses || []).includes(c.code)).length}</div><div class="l">${c.code} · ${esc(C(c).name)}</div></div>`).join("");
+  if (adminState !== "ready") { $("#rows").innerHTML = `<tr><td colspan="11">${esc(t("a." + adminState))}</td></tr>`; return; }
+  $("#rows").innerHTML = rows.length ? rows.map(r => `<tr>
+    <td>${esc((r.createdAt || "").slice(0, 10))}</td><td>${esc(r.name)}</td><td>${esc(r.phone)}</td><td>${esc(r.age ?? "")}</td>
+    <td>${esc(r.district)}${r.village ? "<br><small>" + esc(r.village) + "</small>" : ""}</td>
+    <td>${(r.courses || []).map(c => `<span class="pill">${esc(c)}</span>`).join("")}</td>
+    <td style="white-space:nowrap">${fmt(r.amount ?? feeOf(r.courses))}</td>
+    <td>${payCell(r)}</td>
+    <td>${esc(r.time)}</td><td>${esc(r.english)}</td><td>${esc(r.device)}</td></tr>`).join("")
+    : `<tr><td colspan="11">${esc(t("a.empty"))}</td></tr>`;
+}
+
+function payCell(r) {
+  const p = r.payment || {}, st = ["paid", "pending"].includes(p.status) ? p.status : "unpaid";
+  return `<span class="status ${st}">${esc(t("status." + st))}</span>` +
+    (p.method ? `<br><small>${esc(p.method)}${p.ref ? " · " + esc(t("a.ref")) + ": " + esc(p.ref) : ""}</small>` : "") +
+    (st !== "paid" ? `<br><button class="mini" type="button" data-markpaid="${esc(r._id)}">${esc(t("a.markPaid"))}</button>` : "");
+}
+
+/* ---------- actions ---------- */
+document.addEventListener("click", async e => {
+  const b = e.target.closest("[data-markpaid]");
+  if (!b || !firebase) return;
+  b.disabled = true;
+  const { db, fs } = firebase;
+  try {
+    await fs.updateDoc(fs.doc(db, "enrollments", b.dataset.markpaid), { "payment.status": "paid", "payment.verifiedAt": new Date().toISOString() });
+  } catch (ex) { console.error(ex); b.disabled = false; }
+});
+
+$("#filterCourse").addEventListener("change", renderTable);
+$("#setForm").addEventListener("input", () => { setDirty = true; $("#setNote").textContent = ""; });
+$("#setForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = $("#setErr"); err.hidden = true;
+  const wa = $("#sWa").value.replace(/\D/g, ""), upi = $("#sUpi").value.trim(), stripe = {};
+  if (wa && (wa.length < 11 || wa.length > 15)) { err.hidden = false; err.textContent = t("set.badWa"); return; }
+  for (const c of COURSES) {
+    const v = document.getElementById("s-" + c.code).value.trim();
+    if (v && !safeLink(v)) { err.hidden = false; err.textContent = t("set.badLink"); return; }
+    stripe[c.code] = v;
+  }
+  const btn = $("#setSave"); btn.disabled = true;
+  try {
+    const { db, fs } = firebase;
+    await fs.setDoc(fs.doc(db, "settings", "payment"), { whatsapp: wa, upi, stripe, updatedAt: new Date().toISOString() });
+    setDirty = false; $("#setNote").textContent = t("set.saved");
+  } catch (ex) { console.error(ex); err.hidden = false; err.textContent = t("set.fail"); }
+  finally { btn.disabled = false; }
+});
+
+function csvText() {
+  const head = ["Date", "Name", "WhatsApp", "Age", "District", "Village", "Courses", "Fee (INR)", "Payment status", "Payment method", "Payment ref", "Time", "English", "Device", "Site language"];
+  const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  return [head.join(",")].concat(allRows.map(r => {
+    const p = r.payment || {};
+    return [(r.createdAt || "").slice(0, 10), r.name, r.phone, r.age, r.district, r.village, (r.courses || []).join(" "), r.amount ?? feeOf(r.courses), p.status || "unpaid", p.method, p.ref, r.time, r.english, r.device, r.language].map(q).join(",");
+  })).join("\n");
+}
+$("#downloadCsv").addEventListener("click", () => {
+  const blob = new Blob(["﻿" + csvText()], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `samviikta-enrollments-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+});
+$("#copyCsv").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(csvText()); $("#copyNote").textContent = t("a.copied"); }
+  catch { $("#copyNote").textContent = t("a.nocopy"); }
+});
+
+/* ---------- auth ---------- */
+function showGate(key, email = "") {
+  gateKey = key; gateEmail = email;
+  $("#gateMsg").textContent = t(key, { email });
+  $("#gate").hidden = false; $("#admin").hidden = true;
+}
+
+function stopListening() { unsubs.forEach(u => u()); unsubs = []; allRows = []; adminState = "loading"; }
+
+async function enterDashboard(user) {
+  const { db, fs } = firebase;
+  try {
+    const me = await fs.getDoc(fs.doc(db, "admins", user.email));
+    if (!me.exists()) throw new Error("not admin");
+  } catch {
+    showGate("adm.notAdmin", user.email); return;
+  }
+  $("#gate").hidden = true; $("#admin").hidden = false;
+  unsubs.push(fs.onSnapshot(fs.doc(db, "settings", "payment"), s => {
+    settings = s.exists() ? s.data() : {};
+    if (!setDirty) fillSettings();
+  }));
+  const timer = setTimeout(() => { if (adminState === "loading") { adminState = "slow"; renderTable(); } }, 10000);
+  unsubs.push(fs.onSnapshot(fs.collection(db, "enrollments"), snap => {
+    clearTimeout(timer);
+    allRows = snap.docs.map(d => ({ ...d.data(), _id: d.id })).sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
+    adminState = "ready"; renderTable();
+  }, ex => { console.error(ex); clearTimeout(timer); adminState = "fail"; renderTable(); }));
+}
+
+applyStatic();
+renderAll();
+setupLangToggle(renderAll);
+
+(async () => {
+  if (!firebaseReady) { showGate("adm.notConfigured"); $("#signIn").hidden = true; return; }
+  firebase = await fb();
+  if (!firebase) { showGate("adm.notConfigured"); $("#signIn").hidden = true; return; }
+  const { auth, authMod } = firebase;
+  $("#signIn").addEventListener("click", async () => {
+    try { await authMod.signInWithPopup(auth, new authMod.GoogleAuthProvider()); }
+    catch (ex) { console.error(ex); showGate("adm.signinFail"); }
+  });
+  $("#signOut").addEventListener("click", () => authMod.signOut(auth));
+  authMod.onAuthStateChanged(auth, user => {
+    stopListening();
+    const signedIn = user && !user.isAnonymous;
+    $("#signOut").hidden = !signedIn;
+    $("#signIn").hidden = !!signedIn;
+    $("#who").textContent = signedIn ? user.email : "";
+    if (signedIn) enterDashboard(user); else showGate("adm.gateP");
+  });
+})();
+}
+
+if (ADMIN_MODE) {
+  document.getElementById("top").hidden = true;
+  document.getElementById("siteNav").hidden = true;
+  document.getElementById("adminView").hidden = false;
+  document.getElementById("adminNav").hidden = false;
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.title = "Samviikta Admin";
+  startAdmin();
+} else {
+  startSite();
+}
+</script>
+</body>
+</html>
